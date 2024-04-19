@@ -22,11 +22,6 @@
             
 
 
-
-
-
-
-
 	    // fetch one record/row
 	    $row = $stmt->fetch();
 	    // print the row content.
