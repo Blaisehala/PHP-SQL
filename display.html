@@ -5,6 +5,28 @@
 	<title>Insert form</title>
     </head>
     <body>
+
+		<style type = "text/css">
+			label{
+			display:block;
+			font-weight:bold;
+			text-align:right;
+			width:180px;
+			float:left;
+			}
+			input{
+			font-size:12px;
+			padding:4px 2px;
+			border:solid 1px #aacfe4;
+			width: 200px;
+			margin:2px 0 10px 5px;
+			}
+			</style>
+			 <div style = "width:30%; float:left">
+				<?php include 'index.html'; ?>
+				</div>
+
+				
 	<form action="displayme.php" method="POST">
 	 Name: <input type="text" name="name"/><br><br>
 	 Street: <input type="text" name="street" size="45"/><br><br>
