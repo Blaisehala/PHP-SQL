@@ -2,6 +2,7 @@
 <html>
 <body>
 
+
 <?php
 //form data
 $name=$_POST['name'];

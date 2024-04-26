@@ -1,31 +1,29 @@
-<?php
-include_once 'db.php';
-# form data
-$emp_id = $_POST['emp_id'];
-$first=$_POST['fname'];
-$last=$_POST['lname'];
-$title=$_POST['title'];
-$age=$_POST['age'];
-$yos=$_POST['yos'];
-$salary=$_POST['salary'];
-$email=$_POST['email'];
-$query = "update employees set f_name = :first, l_name = :last, title = :title,
-age = :age, yos = :yos, salary = :salary, email = :email where emp_id =
-:emp_id;";
-$data = array( 'first' => $first, 'last' => $last, 'title' => $title, 'age' =>
-$age, 'yos' => $yos, 'salary' => $salary, 'email' => $email, 'emp_id' =>
-$emp_id);
-$stmt = $conn->prepare($query);
-if($stmt -> execute($data))
-{
-$rows_affected = $stmt->rowCount();
-echo "<h2>".$rows_affected." row updated sucessfully!</h2>";
-include 'display.php';
-display("SELECT * FROM employees;");
+<?php 
+
+include_once 'db.php'; 
+
+# form data 
+$customer_name = $_POST['customer_name'];
+$customer_street = $_POST['customer_street'];
+$customer_city = $_POST['customer_city'];
+
+$query = "update customer set customer_street = :street, customer_city = :city WHERE customer_name = :name"; 
+$data = array('street' => $customer_street, 'city' => $customer_city, 'name' => $customer_name);
+
+$stmt = $conn->prepare($query); 
+
+if($stmt -> execute($data)) 
+{ 
+	$rows_affected = $stmt->rowCount(); 
+	echo "<h2>".$rows_affected." row updated sucessfully!</h2>";
+	include 'display.php'; 
+	display("SELECT * FROM customer;"); 
+
+
 }
-else
-{
-echo "update failed: (" . $conn->errno . ") " . $conn->error;
+else 
+{ 
+	echo "update failed: (" . $conn->errno . ") " . $conn->error; 
 }
-$conn->close();
+$conn->close(); 
 ?>

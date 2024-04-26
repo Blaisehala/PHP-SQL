@@ -7,7 +7,7 @@
     <?php
 	$host = "pluto";
 	$dbname = "db";
-	$user = " ******";
+	$user = "";
 	$pass = "******";
 	// Always use try-catch block
 	try {
