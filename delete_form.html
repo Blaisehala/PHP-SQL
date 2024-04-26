@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Customer</title>
+</head>
+<body>
+
+    <style type = "text/css">
+        label{
+        display:block;
+        font-weight:bold;
+        text-align:right;
+        width:180px;
+        float:left;
+        }
+        input{
+        font-size:12px;
+        padding:4px 2px;
+        border:solid 1px #aacfe4;
+        width: 200px;
+        margin:2px 0 10px 5px;
+        }
+        </style>
+         <div style = "width:30%; float:left">
+            <?php include 'index.html'; ?>
+            </div>
+
+    <h2>Delete Customer</h2>
+    <form action="delete.php" method="post">
+        Customer Name: <input type="text" name="customer_name" value=""><br>
+        <input type="submit" value="Delete">
+    </form>
+</body>
+</html>
